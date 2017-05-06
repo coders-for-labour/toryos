@@ -12,9 +12,6 @@ export class TerminalService {
   data: TerminalLine[] = [];
   private anyErrors: boolean = false;
   private finished: boolean = false;
-  printData(): Promise<TerminalLine[]> {
-    return Promise.resolve(DATA);
-  }
   start(): void {
     this.terminalData = new Observable(observer => {
       let timer = 0;
@@ -26,6 +23,10 @@ export class TerminalService {
 
           timer += t.pause * 1000;
         }
+
+        setTimeout(() => {
+          observer.complete();
+        }, timer);
     });
 
     let subscription = this.terminalData.subscribe(
