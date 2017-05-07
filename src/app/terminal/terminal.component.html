@@ -1,3 +1,4 @@
-<p *ngFor="let t of svc.data">
-{{t.text}}
-</p>
+<div class="terminal">
+<p *ngFor="let t of svc.data" class="terminal-line {{t.type}} ">{{t.text}}</p>
+<i *ngIf="!svc.finished" class="spinner">_</i>
+</div>

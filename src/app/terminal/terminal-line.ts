@@ -1,5 +1,6 @@
 export class TerminalLine{
   text: string;
   type: string;
-  pause: number
+  pause: number;
+  active: boolean = false;
 }
