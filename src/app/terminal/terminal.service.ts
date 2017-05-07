@@ -11,7 +11,7 @@ export class TerminalService {
   private terminalData: Observable<TerminalLine>;
   data: TerminalLine[] = [];
   private anyErrors: boolean = false;
-  private finished: boolean = false;
+  finished: boolean = false;
   start(): void {
     let stream = this.data;
     let timer = 0;
