@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'ToryOS 2017';
+  title = 'Gov.OS 2015 Edition';
 }

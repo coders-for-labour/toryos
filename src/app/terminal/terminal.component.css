@@ -1,3 +1,22 @@
 * {
-  font-family: Courier;
+  font-family: 'Courier New';
+}
+
+.info{
+    font-weight: bold;
+}
+
+.alert {
+  animation: spinner 0.5s linear 3;
+}
+
+
+
+
+.spinner {
+  animation: spinner 1s linear infinite;
+}
+
+@keyframes spinner {
+  50% { opacity: 0; }
 }

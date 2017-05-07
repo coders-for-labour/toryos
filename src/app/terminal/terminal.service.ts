@@ -13,24 +13,32 @@ export class TerminalService {
   private anyErrors: boolean = false;
   private finished: boolean = false;
   start(): void {
-    this.terminalData = new Observable(observer => {
-      let timer = 0;
+    let stream = this.data;
+    let timer = 0;
+    this.terminalData = new Observable(subscriber => {
         for(var i = 0; i < DATA.length; i++){
           let t = DATA[i];
+
           setTimeout(() => {
-            observer.next(t);
+            subscriber.next(t);
           }, timer + (t.pause * 1000));
 
           timer += t.pause * 1000;
         }
 
         setTimeout(() => {
-          observer.complete();
+          subscriber.complete();
         }, timer);
     });
 
+    let subIndex = 0;
     let subscription = this.terminalData.subscribe(
-        value => this.data.push(value),
+        value => {
+          this.data.push(value);
+          if(subIndex > 0){
+            this.data[subIndex - 1].active = false;
+          }
+        },
         error => this.anyErrors = true,
         () => this.finished = true
       );
