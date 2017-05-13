@@ -28,7 +28,8 @@ export class TerminalService {
 
         setTimeout(() => {
           subscriber.complete();
-        }, timer);
+          this.upgrade();
+        }, timer + 2000);
     });
 
     let subIndex = 0;
@@ -42,6 +43,11 @@ export class TerminalService {
         error => this.anyErrors = true,
         () => this.finished = true
       );
+  };
+  upgrade(): void{
+    if(this.finished){
+      window.location.href = "http://www.labour.org.uk/index.php/home";
+    }
   }
 
 }
