@@ -1,3 +1,16 @@
 h1 {
   font-family: Courier;
 }
+
+.copy {
+  font-size: small;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+a {
+  color: #fff;
+  text-decoration: underline;
+}
