@@ -12,10 +12,42 @@
 }
 
 
+#terminal{
+  padding-bottom: 10px;
+}
 
+@keyframes boot{
+  from { background-color: #000; }
+  to {background-color: #c50037; }
+}
+
+#bootscreen{
+  animation: boot 2s linear 0s 1;
+  background-color: #c50037;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+@keyframes bootlogo {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.boot-logo{
+  animation: bootlogo 2s forwards 2s 1;
+  opacity: 0;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin-top: 10%;
+}
 
 .spinner {
   animation: spinner 1s linear infinite;
+  margin-bottom: 10px;
 }
 
 @keyframes spinner {

@@ -1,4 +1,8 @@
-<div class="terminal">
-<p *ngFor="let t of svc.data" class="terminal-line {{t.type}} ">{{t.text}}</p>
-<i *ngIf="!svc.finished" class="spinner">_</i>
+<div *ngIf="!svc.finished" id="terminal" class="terminal">
+  <h1>Gov.OS 2015</h1>
+  <p *ngFor="let t of svc.data" class="terminal-line {{t.type}} ">{{t.text}}</p>
+  <i id="spinner" class="spinner">_</i>
+</div>
+<div *ngIf="svc.finished" id="bootscreen" class="bootscreen">
+  <img src="assets/logo-white.png" class="boot-logo">
 </div>
