@@ -47,16 +47,18 @@ export class TerminalService {
       );
   };
   scroll(): void{
-    window.scrollTo(0,document.body.scrollHeight);
+    window.scrollTo(0,document.getElementById("terminal").scrollHeight);
   };
   reboot(): void{
+    window.scrollTo(0,0);
+
     setTimeout(() => {
       this.upgrade();
     }, 5000);
   }
   upgrade(): void{
     if(this.finished){
-      window.location.href = "http://www.labour.org.uk/index.php/home";
+      //window.location.href = "http://www.labour.org.uk/index.php/home";
     }
   };
 
