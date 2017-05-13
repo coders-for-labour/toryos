@@ -58,7 +58,7 @@ export class TerminalService {
   }
   upgrade(): void{
     if(this.finished){
-      //window.location.href = "http://www.labour.org.uk/index.php/home";
+      window.location.href = "http://www.labour.org.uk/index.php/home";
     }
   };
 
