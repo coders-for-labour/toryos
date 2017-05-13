@@ -21,6 +21,7 @@ export class TerminalService {
 
           setTimeout(() => {
             subscriber.next(t);
+            this.scroll();
           }, timer + (t.pause * 1000));
 
           timer += t.pause * 1000;
@@ -28,7 +29,8 @@ export class TerminalService {
 
         setTimeout(() => {
           subscriber.complete();
-          this.upgrade();
+          this.scroll();
+          this.reboot();
         }, timer + 2000);
     });
 
@@ -44,10 +46,18 @@ export class TerminalService {
         () => this.finished = true
       );
   };
+  scroll(): void{
+    window.scrollTo(0,document.body.scrollHeight);
+  };
+  reboot(): void{
+    setTimeout(() => {
+      this.upgrade();
+    }, 5000);
+  }
   upgrade(): void{
     if(this.finished){
       window.location.href = "http://www.labour.org.uk/index.php/home";
     }
-  }
+  };
 
 }
