@@ -3,6 +3,7 @@ import { TerminalLine } from './terminal-line';
 import { DATA } from './mock-terminal-data';
 import { Observable } from 'rxjs/Observable';
 
+declare let ga: Function;
 
 @Injectable()
 export class TerminalService {
@@ -58,7 +59,12 @@ export class TerminalService {
   }
   upgrade(): void{
     if(this.finished){
-      window.location.href = "http://www.labour.org.uk/index.php/home";
+      let url = "http://www.labour.org.uk/index.php/home";
+      ga("send", {
+        hitType: 'pageview',
+        location: url
+        });
+      window.location.href = url;
     }
   };
 
