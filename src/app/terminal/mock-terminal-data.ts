@@ -15,6 +15,6 @@ export const DATA: TerminalLine[] = [
   { id: 12, text: "Security Module: Compromised - Unable to start up new security workers", type: "info", pause: 2, active: false },
   { id: 13, text: "Malware Detected: t0ri35.bin", type: "alert", pause: 4, active: false },
   { id: 14, text: "ALERT: System Failure Imminent", type: "alert", pause: 2, active: false },
-  { id: 15, text: "Gov.OS 2017 is Available: Upgrading", type: "info", pause: 2, active: false },
+  { id: 15, text: "Gov.OS 2019 is Available: Upgrading", type: "info", pause: 2, active: false },
   { id: 15, text: "Upgrade installed - rebooting...", type: "info", pause: 2, active: false }
 ]

@@ -63,15 +63,6 @@
   width: 100%;
 }
 
-.tagline{
-  font-size: xx-large !important;
-  font-weight: lighter;
-}
-
-.tagline b{
-  font-weight: bold;
-}
-
 a {
   color: #fff;
   text-decoration: none;
