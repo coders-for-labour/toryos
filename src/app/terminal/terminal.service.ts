@@ -59,7 +59,7 @@ export class TerminalService {
   }
   upgrade(): void{
     if(this.finished){
-      let url = "http://www.labour.org.uk/index.php/home";
+      let url = "https://labour.org.uk/manifesto/";
       ga("send", {
         hitType: 'pageview',
         location: url
